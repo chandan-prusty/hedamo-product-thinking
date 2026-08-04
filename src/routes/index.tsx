@@ -156,7 +156,7 @@ function Home() {
                 width={1200}
                 height={1008}
                 decoding="async"
-                className="w-full object-contain drop-shadow-[0_3px_6px_rgba(20,30,55,0.10),0_12px_24px_rgba(20,30,55,0.14)] sm:drop-shadow-[0_4px_10px_rgba(20,30,55,0.10),0_20px_38px_rgba(20,30,55,0.16)] lg:drop-shadow-[0_6px_14px_rgba(20,30,55,0.10),0_30px_55px_rgba(20,30,55,0.18)] xl:drop-shadow-[0_8px_18px_rgba(20,30,55,0.10),0_42px_72px_rgba(20,30,55,0.20)]"
+                className="w-full object-contain drop-shadow-[0_4px_8px_rgba(20,30,55,0.12),0_16px_32px_rgba(20,30,55,0.18)] sm:drop-shadow-[0_5px_10px_rgba(20,30,55,0.12),0_22px_42px_rgba(20,30,55,0.18)] lg:drop-shadow-[0_6px_14px_rgba(20,30,55,0.12),0_32px_60px_rgba(20,30,55,0.20)] xl:drop-shadow-[0_8px_18px_rgba(20,30,55,0.12),0_44px_78px_rgba(20,30,55,0.22)]"
               />
             </motion.div>
           </div>
