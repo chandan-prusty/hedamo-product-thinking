@@ -177,22 +177,21 @@ function Home() {
         {/* Hero */}
         <section
           aria-labelledby="hero-heading"
-          className="mx-auto max-w-[1320px] px-4 pt-10 pb-8 sm:px-8 sm:pt-20 sm:pb-10"
+          className="mx-auto max-w-[1320px] px-4 pt-12 pb-10 sm:px-8 sm:pt-24 sm:pb-14"
         >
-          <div className="grid w-full items-center gap-12 lg:grid-cols-[55fr_45fr] lg:gap-14">
+          <div className="grid w-full items-center gap-12 lg:grid-cols-[55fr_45fr] lg:gap-16">
             <div>
               <motion.p
-                className="max-w-[65ch] text-[1.0625rem] leading-relaxed text-muted-foreground"
+                className="eyebrow"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease }}
               >
-                HEDAMO helps producers structure product intelligence into transparent, portable
-                product profiles for reviewers, institutions and buyers.
+                HEDAMO Product Intelligence Framework
               </motion.p>
               <motion.h1
                 id="hero-heading"
-                className="mt-6 max-w-[14ch] font-serif text-[2.6rem] leading-[1.04] text-navy sm:text-6xl lg:text-[4.5rem]"
+                className="mt-8 max-w-[14ch] font-serif text-[2.6rem] leading-[1.04] text-navy sm:text-6xl lg:mt-10 lg:text-[4.5rem]"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, delay: 0.1, ease }}
@@ -200,46 +199,58 @@ function Home() {
                 The product moves. The understanding doesn&apos;t.
               </motion.h1>
               <motion.p
-                className="mt-8 max-w-[50ch] text-[1.0625rem] leading-relaxed text-muted-foreground"
+                className="mt-8 max-w-[50ch] text-[1.0625rem] leading-relaxed text-muted-foreground lg:mt-10"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.65, delay: 0.2, ease }}
               >
                 HEDAMO is a structured disclosure system for product intelligence. Producers
-                record what they know about their products; reviewers, institutions and buyers can
-                then read that information in a consistent, transparent format. It exists because
-                product claims often travel farther than the understanding behind them.
+                record what they know; reviewers, institutions and buyers read it in a
+                consistent, transparent format.
               </motion.p>
               <motion.div
-                className="mt-8 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center"
+                className="mt-10 flex flex-col items-stretch gap-3 sm:mt-12 sm:flex-row sm:flex-wrap sm:items-center"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.34, ease }}
               >
-
                 <a
                   href="#profiles"
                   className="group btn-primary inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground"
                 >
-                  View sample product profile
+                  View Sample Product Profile
                   <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
                 </a>
                 <Link
                   to="/applications"
                   className="btn-secondary inline-flex items-center justify-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy"
                 >
-                  Create product declaration
+                  Start Producer Declaration
                 </Link>
-                <p className="w-full text-sm text-muted-foreground sm:pt-1">
-                  View an example before starting your own declaration.
-                </p>
               </motion.div>
 
+              <motion.div
+                className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 sm:mt-10"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.42, ease }}
+              >
+                <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <Check className="h-3 w-3 text-green" aria-hidden="true" strokeWidth={2.5} />
+                  Producer-owned
+                </span>
+                <span className="hidden h-1 w-1 rounded-full bg-muted-foreground/40 sm:inline-block" />
+                <span className="text-xs text-muted-foreground">Portable</span>
+                <span className="hidden h-1 w-1 rounded-full bg-muted-foreground/40 sm:inline-block" />
+                <span className="text-xs text-muted-foreground">Transparent</span>
+                <span className="hidden h-1 w-1 rounded-full bg-muted-foreground/40 sm:inline-block" />
+                <span className="text-xs text-muted-foreground">Evidence-aware</span>
+              </motion.div>
             </div>
 
             {/* Editorial photo composition */}
             <motion.div
-              className="relative mx-auto w-full max-w-[620px] overflow-visible"
+              className="relative mx-auto w-full max-w-[680px] overflow-visible lg:max-w-[720px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15, ease }}
