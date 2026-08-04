@@ -157,27 +157,27 @@ function Home() {
                 className="mt-8 max-w-[46ch] text-[1.0625rem] leading-relaxed text-muted-foreground"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.12 }}
+                transition={{ duration: 0.65, delay: 0.2, ease }}
               >
                 HEDAMO structures producer-declared product intelligence into a portable,
                 transparent product profile.
               </motion.p>
               <motion.div
                 className="mt-8 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.24 }}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.34, ease }}
               >
                 <a
                   href="#profiles"
-                  className="inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
+                  className="group btn-primary inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground"
                 >
                   Explore product profile
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
                 </a>
                 <Link
                   to="/applications"
-                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy transition-all hover:-translate-y-0.5 hover:bg-secondary"
+                  className="btn-secondary inline-flex items-center justify-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy"
                 >
                   Start producer application
                 </Link>
@@ -285,10 +285,10 @@ function Home() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block"
+                    className="group card-lift block rounded-sm"
                   >
                     <article>
-                      <div className="overflow-hidden rounded-sm bg-secondary">
+                      <div className="media-zoom rounded-sm bg-secondary">
                         <img
                           src={p.img}
                           alt={`${p.type} from ${p.origin}`}
@@ -296,7 +296,7 @@ function Home() {
                           height={768}
                           loading="lazy"
                           decoding="async"
-                          className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                          className="aspect-[4/3] w-full object-cover"
                         />
                       </div>
                       <h3 className="mt-5 font-serif text-xl text-navy">{p.name}</h3>
@@ -442,10 +442,10 @@ function Home() {
               </p>
               <a
                 href="#how-heading"
-                className="mt-6 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
+                className="group mt-6 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
               >
                 Read the methodology
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
               </a>
             </Reveal>
             <Reveal delay={0.08} className="mt-12 lg:mt-0">
@@ -455,10 +455,10 @@ function Home() {
               </p>
               <Link
                 to="/backlog"
-                className="mt-6 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
+                className="group mt-6 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
               >
                 Share your question
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
               </Link>
             </Reveal>
           </div>
@@ -477,10 +477,10 @@ function Home() {
                 href="https://hedamo-product-disclosure-ai.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-sm bg-navy px-8 py-4 sm:w-auto text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
+                className="group btn-primary mt-8 inline-flex w-full items-center justify-center gap-3 rounded-sm bg-navy px-8 py-4 sm:w-auto text-sm text-primary-foreground"
               >
                 Start producer application
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
               </a>
             </Reveal>
           </div>

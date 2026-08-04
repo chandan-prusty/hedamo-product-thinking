@@ -120,7 +120,7 @@ function priorityTone(p: Item["priority"]) {
 
 function Card({ item }: { item: Item }) {
   return (
-    <article className="border border-border bg-card p-6 transition-colors hover:border-navy/30">
+    <article className="card-lift h-full border border-border bg-card p-6">
       <div className="flex items-center justify-between">
         <span className={`text-[11px] tracking-[0.16em] ${priorityTone(item.priority)}`}>
           {item.priority}
