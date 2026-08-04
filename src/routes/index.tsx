@@ -153,10 +153,10 @@ function Home() {
               <img
                 src={heroComposition}
                 alt="Olive branch with bowls of olives, cardamom, coffee beans, rice and olive oil"
-                width={1200}
-                height={1008}
+                width={1280}
+                height={1056}
                 decoding="async"
-                className="w-full object-contain drop-shadow-[0_4px_8px_rgba(20,30,55,0.12),0_16px_32px_rgba(20,30,55,0.18)] sm:drop-shadow-[0_5px_10px_rgba(20,30,55,0.12),0_22px_42px_rgba(20,30,55,0.18)] lg:drop-shadow-[0_6px_14px_rgba(20,30,55,0.12),0_32px_60px_rgba(20,30,55,0.20)] xl:drop-shadow-[0_8px_18px_rgba(20,30,55,0.12),0_44px_78px_rgba(20,30,55,0.22)]"
+                className="w-full object-contain"
               />
             </motion.div>
           </div>
