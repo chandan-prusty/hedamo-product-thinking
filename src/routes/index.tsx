@@ -86,6 +86,15 @@ const audiences = [
   { icon: Globe, role: "Trade body", plural: "Trade Bodies", question: "Can producers be seen beyond codes?" },
 ];
 
+const trust = [
+  { icon: Fingerprint, title: "Producer-owned declarations" },
+  { icon: Briefcase, title: "Portable product intelligence" },
+  { icon: FileCheck, title: "Evidence-aware structure" },
+  { icon: Eye, title: "Transparent information states" },
+  { icon: Globe, title: "International compatibility" },
+  { icon: ShieldOff, title: "Not a certification body" },
+];
+
 
 const contrasts = [
   { label: "Certification", body: "confirms a threshold." },
