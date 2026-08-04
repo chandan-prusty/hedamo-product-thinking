@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  Check,
   FileText,
   Layers,
   Share2,
@@ -315,10 +316,24 @@ function Home() {
             <div className="mt-12 grid gap-8 lg:grid-cols-[38fr_62fr] lg:items-start">
               <Reveal>
                 <p className="eyebrow">The fourth layer</p>
-                <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
-                  International, national and community records each hold part of the story. The
-                  fourth layer is the producer&apos;s own intelligence — how the product was grown,
-                  cured, handled and tested — structured and shown honestly, state by state.
+                <p className="mt-3 max-w-[62ch] text-sm leading-relaxed text-muted-foreground">
+                  Three records hold part of the story. The fourth holds the rest.
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {[
+                    "International records",
+                    "National records",
+                    "Community records",
+                    "Producer intelligence — grown, cured, handled, tested",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-green" aria-hidden="true" strokeWidth={1.8} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 max-w-[62ch] border-l-2 border-green/50 pl-4 text-sm leading-relaxed text-navy">
+                  Structured and shown honestly, state by state.
                 </p>
               </Reveal>
               <ol className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
@@ -367,10 +382,18 @@ function Home() {
                 </dl>
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
-                  Missing isn&apos;t withheld, and withheld isn&apos;t undocumented — each is its own
-                  honest state, never a mark against the producer, and never summed into a score.
-                </p>
+                <div className="border-l-2 border-navy/25 pl-4">
+                  <p className="max-w-[62ch] text-sm leading-relaxed text-navy">
+                    Missing isn&apos;t withheld.
+                  </p>
+                  <p className="mt-1 max-w-[62ch] text-sm leading-relaxed text-navy">
+                    Withheld isn&apos;t undocumented.
+                  </p>
+                  <p className="mt-1 max-w-[62ch] text-sm leading-relaxed text-muted-foreground">
+                    Never a mark against the producer. Never summed into a score.
+                  </p>
+                </div>
+
                 <ul className="mt-5 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-1">
                   {evidenceStates.map((e) => (
                     <li key={e.state} className="text-sm leading-relaxed">
