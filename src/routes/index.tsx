@@ -164,20 +164,20 @@ function Home() {
               </motion.p>
               <motion.div
                 className="mt-8 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.24 }}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.34, ease }}
               >
                 <a
                   href="#profiles"
-                  className="inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
+                  className="group btn-primary inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground"
                 >
                   Explore product profile
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
                 </a>
                 <Link
                   to="/applications"
-                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy transition-all hover:-translate-y-0.5 hover:bg-secondary"
+                  className="btn-secondary inline-flex items-center justify-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy"
                 >
                   Start producer application
                 </Link>
