@@ -466,13 +466,15 @@ function Home() {
               </h2>
             </Reveal>
             <Reveal delay={0.08}>
-              <Link
-                to="/applications"
+              <a
+                href="https://hedamo-product-disclosure-ai.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-3 rounded-sm bg-navy px-8 py-4 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
               >
                 Start producer application
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+              </a>
             </Reveal>
           </div>
         </section>
