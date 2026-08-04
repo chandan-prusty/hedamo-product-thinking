@@ -504,15 +504,6 @@ The interface should communicate calmness, trust, clarity, and research credibil
 
 Every design decision should be justifiable from a product perspective rather than aesthetics.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a7cc1892-1bc4-4a91-96ff-1c00e870cff7).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
