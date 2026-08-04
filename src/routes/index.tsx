@@ -12,6 +12,11 @@ import {
   ShoppingCart,
   FlaskConical,
   Globe,
+  Fingerprint,
+  Briefcase,
+  FileCheck,
+  Eye,
+  ShieldOff,
 } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -79,6 +84,15 @@ const audiences = [
   { icon: ShoppingCart, role: "Buyer", plural: "Buyers", question: "What am I actually sourcing?" },
   { icon: FlaskConical, role: "Researcher", plural: "Researchers", question: "Can this be compared across regions?" },
   { icon: Globe, role: "Trade body", plural: "Trade Bodies", question: "Can producers be seen beyond codes?" },
+];
+
+const trust = [
+  { icon: Fingerprint, title: "Producer-owned declarations" },
+  { icon: Briefcase, title: "Portable product intelligence" },
+  { icon: FileCheck, title: "Evidence-aware structure" },
+  { icon: Eye, title: "Transparent information states" },
+  { icon: Globe, title: "International compatibility" },
+  { icon: ShieldOff, title: "Not a certification body" },
 ];
 
 
@@ -202,6 +216,34 @@ function Home() {
               />
             </motion.div>
           </div>
+        </section>
+
+        {/* Why organisations trust HEDAMO */}
+        <section className="mx-auto max-w-[1320px] px-4 py-12 sm:px-8 sm:py-16" aria-labelledby="trust-heading">
+          <div className="max-w-2xl">
+            <Reveal>
+              <p className="eyebrow">Trust</p>
+              <h2 id="trust-heading" className="mt-3 text-2xl text-navy sm:text-4xl">
+                Why organisations trust HEDAMO
+              </h2>
+              <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                Transparent product intelligence without certification claims.
+              </p>
+            </Reveal>
+          </div>
+
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {trust.map((t, i) => (
+              <Reveal as="li" key={t.title} delay={i * 0.05}>
+                <div className="card-lift group flex items-start gap-4 rounded-sm border border-border bg-card p-5 sm:p-6">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary">
+                    <t.icon className="h-4 w-4 text-green" aria-hidden="true" strokeWidth={1.6} />
+                  </span>
+                  <h3 className="font-serif text-lg leading-snug text-navy">{t.title}</h3>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
         </section>
 
         {/* What HEDAMO is — contrast band */}
