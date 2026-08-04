@@ -170,8 +170,8 @@ function Home() {
           <Reveal className="rounded-2xl border border-border bg-card/60 px-6 py-10 sm:px-10">
             <ol className="grid items-center gap-8 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:gap-4">
               {steps.map((s, i) => (
-                <>
-                  <li key={s.title} className="flex items-start gap-5">
+                <Fragment key={s.title}>
+                  <li className="flex items-start gap-5">
                     <span className="flex h-[4.25rem] w-[4.25rem] shrink-0 items-center justify-center rounded-full bg-secondary">
                       <s.icon className="h-6 w-6 text-green" aria-hidden="true" strokeWidth={1.4} />
                     </span>
@@ -184,12 +184,12 @@ function Home() {
                   </li>
                   {i < steps.length - 1 && (
                     <span
-                      key={`${s.title}-line`}
                       aria-hidden="true"
                       className="mx-auto hidden h-px w-16 border-t border-dashed border-navy/25 sm:block"
                     />
                   )}
-                </>
+                </Fragment>
+
               ))}
             </ol>
           </Reveal>
