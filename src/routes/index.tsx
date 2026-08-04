@@ -98,6 +98,33 @@ const trust = [
   { icon: ShieldOff, title: "Not a certification body" },
 ];
 
+const metrics = [
+  {
+    icon: Users,
+    value: "5",
+    label: "Stakeholder Groups",
+    note: "Producers, buyers, reviewers, institutions, researchers and trade bodies.",
+  },
+  {
+    icon: Layers,
+    value: "4",
+    label: "Evidence Layers",
+    note: "International, national, community and producer intelligence.",
+  },
+  {
+    icon: ListChecks,
+    value: "5",
+    label: "Application Statuses",
+    note: "Draft, submitted, under review, approved and published.",
+  },
+  {
+    icon: ScanLine,
+    value: "100%",
+    label: "Transparent Status Tracking",
+    note: "Every field shows its evidence state, never hidden behind a score.",
+  },
+];
+
 
 const contrasts = [
   { label: "Certification", body: "confirms a threshold." },
