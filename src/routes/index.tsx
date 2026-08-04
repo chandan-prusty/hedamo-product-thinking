@@ -17,6 +17,9 @@ import {
   FileCheck,
   Eye,
   ShieldOff,
+  Users,
+  ListChecks,
+  ScanLine,
 } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -93,6 +96,33 @@ const trust = [
   { icon: Eye, title: "Transparent information states" },
   { icon: Globe, title: "International compatibility" },
   { icon: ShieldOff, title: "Not a certification body" },
+];
+
+const metrics = [
+  {
+    icon: Users,
+    value: "5",
+    label: "Stakeholder Groups",
+    note: "Producers, buyers, reviewers, institutions, researchers and trade bodies.",
+  },
+  {
+    icon: Layers,
+    value: "4",
+    label: "Evidence Layers",
+    note: "International, national, community and producer intelligence.",
+  },
+  {
+    icon: ListChecks,
+    value: "5",
+    label: "Application Statuses",
+    note: "Draft, submitted, under review, approved and published.",
+  },
+  {
+    icon: ScanLine,
+    value: "100%",
+    label: "Transparent Status Tracking",
+    note: "Every field shows its evidence state, never hidden behind a score.",
+  },
 ];
 
 
@@ -265,6 +295,36 @@ function Home() {
               </Reveal>
             ))}
           </div>
+        </section>
+
+        {/* HEDAMO at a glance */}
+        <section className="mx-auto max-w-[1320px] px-4 py-12 sm:px-8 sm:py-16" aria-labelledby="glance-heading">
+          <Reveal>
+            <p className="eyebrow">Overview</p>
+            <h2 id="glance-heading" className="mt-3 max-w-2xl text-2xl text-navy sm:text-4xl">
+              HEDAMO at a glance
+            </h2>
+            <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+              A structured system for transparent product intelligence.
+            </p>
+          </Reveal>
+
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {metrics.map((m, i) => (
+              <Reveal as="li" key={m.label} delay={i * 0.05}>
+                <div className="card-lift group rounded-sm border border-border bg-card p-5 sm:p-6">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
+                      <m.icon className="h-4 w-4 text-green" aria-hidden="true" strokeWidth={1.6} />
+                    </span>
+                  </div>
+                  <p className="mt-5 font-serif text-4xl text-navy sm:text-5xl">{m.value}</p>
+                  <h3 className="mt-2 font-serif text-lg text-navy">{m.label}</h3>
+                  <p className="mt-1 max-w-[30ch] text-sm leading-relaxed text-muted-foreground">{m.note}</p>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
         </section>
 
         {/* Who uses it + examples they read */}
