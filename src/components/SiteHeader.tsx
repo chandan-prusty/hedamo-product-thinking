@@ -9,7 +9,7 @@ const nav = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
+      <div className="mx-auto flex h-16 max-w-[1320px] items-center justify-between gap-6 px-5 sm:px-8">
         <Link
           to="/"
           className="font-serif text-lg tracking-[0.18em] uppercase text-navy"
@@ -23,7 +23,7 @@ export function SiteHeader() {
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              className="rounded-sm px-3 py-2 text-[13px] whitespace-nowrap text-muted-foreground transition-colors hover:text-navy data-[status=active]:text-navy data-[status=active]:underline data-[status=active]:underline-offset-[6px]"
+              className="relative rounded-sm px-3 py-2 text-[13px] whitespace-nowrap text-muted-foreground transition-colors after:absolute after:bottom-1 after:left-3 after:h-px after:w-[calc(100%-1.5rem)] after:origin-left after:scale-x-0 after:bg-navy after:transition-transform after:duration-300 hover:text-navy hover:after:scale-x-100 data-[status=active]:text-navy data-[status=active]:after:scale-x-100"
             >
               {item.label}
             </Link>
