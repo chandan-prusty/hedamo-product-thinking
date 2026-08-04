@@ -12,6 +12,11 @@ import {
   ShoppingCart,
   FlaskConical,
   Globe,
+  Fingerprint,
+  Briefcase,
+  FileCheck,
+  Eye,
+  ShieldOff,
 } from "lucide-react";
 import { motion } from "motion/react";
 
