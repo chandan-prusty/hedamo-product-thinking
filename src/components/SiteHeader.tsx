@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+
 
 const nav = [
   { to: "/", label: "Overview" },
@@ -91,14 +92,112 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
+  const primary = [
+    { to: "/", label: "Overview" },
+    { to: "/applications", label: "Producer Applications" },
+    { to: "/backlog", label: "Product Backlog" },
+  ];
+
+  const secondary = [
+    { href: "#", label: "Methodology" },
+    { href: "#", label: "Research" },
+    { href: "#", label: "Documentation" },
+    { href: "#", label: "Contact" },
+  ];
+
   return (
     <footer className="rule-top mt-16 sm:mt-24">
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-8 sm:py-10">
-        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Product thinking prototype — HEDAMO Track A. Structure only: HEDAMO does not certify,
-          verify, or approve.
-        </p>
+      <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-8 sm:py-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          {/* Navigation */}
+          <div className="grid gap-10 sm:grid-cols-2">
+            <div>
+              <h3 className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
+                Navigate
+              </h3>
+              <ul className="mt-5 space-y-3">
+                {primary.map((item) => (
+                  <li key={item.to}>
+                    <Link
+                      to={item.to}
+                      className="relative inline-block text-[15px] text-navy transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-navy after:transition-transform after:duration-300 hover:text-green hover:after:scale-x-100"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
+                Resources
+              </h3>
+              <ul className="mt-5 space-y-3">
+                {secondary.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="relative inline-block text-[15px] text-navy transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-navy after:transition-transform after:duration-300 hover:text-green hover:after:scale-x-100"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Philosophy */}
+          <div className="lg:pl-8">
+            <h3 className="font-serif text-2xl tracking-tight text-navy sm:text-3xl">
+              HEDAMO
+            </h3>
+            <p className="mt-5 max-w-[42ch] text-[15px] leading-relaxed text-muted-foreground">
+              HEDAMO structures producer-declared product intelligence into portable, transparent product profiles.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom row */}
+        <div className="mt-12 flex flex-col gap-6 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-muted-foreground">
+            &copy; {new Date().getFullYear()} HEDAMO · Track A Prototype
+          </p>
+          <div className="flex flex-wrap items-center gap-6">
+            <a
+              href="#"
+              className="group inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-navy"
+              aria-label="GitHub"
+            >
+              <Github className="h-3.5 w-3.5" strokeWidth={1.6} />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-navy after:transition-transform after:duration-300 group-hover:after:scale-x-100">
+                GitHub
+              </span>
+            </a>
+            <a
+              href="#"
+              className="group inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-navy"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-3.5 w-3.5" strokeWidth={1.6} />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-navy after:transition-transform after:duration-300 group-hover:after:scale-x-100">
+                LinkedIn
+              </span>
+            </a>
+            <a
+              href="mailto:hello@hedamo.com"
+              className="group inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-navy"
+              aria-label="Email"
+            >
+              <Mail className="h-3.5 w-3.5" strokeWidth={1.6} />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-navy after:transition-transform after:duration-300 group-hover:after:scale-x-100">
+                Email
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
 }
+
