@@ -20,7 +20,7 @@ import olive from "@/assets/olive.jpg";
 import coffee from "@/assets/coffee.jpg";
 import rice from "@/assets/rice.jpg";
 import cardamom from "@/assets/cardamom.jpg";
-import heroComposition from "@/assets/hero-composition.jpg";
+import heroComposition from "@/assets/hero-composition.png";
 
 
 export const Route = createFileRoute("/")({
@@ -156,7 +156,7 @@ function Home() {
                 width={1200}
                 height={1008}
                 decoding="async"
-                className="w-full rounded-sm object-cover mix-blend-multiply drop-shadow-[0_40px_70px_rgba(20,30,55,0.16)]"
+                className="w-full object-contain drop-shadow-[0_45px_60px_rgba(20,30,55,0.22)]"
               />
             </motion.div>
           </div>
@@ -197,7 +197,7 @@ function Home() {
 
         {/* Used by strip */}
         <section aria-label="Used by" className="border-y border-border bg-secondary/70">
-          <div className="mx-auto flex max-w-[1320px] flex-wrap items-center gap-x-10 gap-y-5 px-5 py-6 sm:px-8">
+          <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-center gap-x-10 gap-y-5 px-5 py-6 text-center sm:px-8">
             <p className="text-sm font-medium text-navy">Used by</p>
             {audiences.map((r) => (
               <div key={r.role} className="flex items-center gap-2.5">
