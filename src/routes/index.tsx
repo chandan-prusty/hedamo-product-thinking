@@ -203,162 +203,136 @@ function Home() {
           </div>
         </section>
 
-        {/* How HEDAMO works — connected panel */}
-        <section aria-labelledby="how-heading" className="mx-auto max-w-[1320px] px-4 pb-16 sm:px-8">
-          <h2 id="how-heading" className="sr-only">
-            How HEDAMO works
-          </h2>
-          <Reveal className="rounded-2xl border border-border bg-card/60 px-5 py-8 sm:px-10 sm:py-10">
-            <ol className="grid items-center gap-8 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:gap-4">
+        {/* What HEDAMO is — contrast band */}
+        <section className="border-y border-border bg-secondary/60" aria-label="What product intelligence is">
+          <div className="mx-auto grid max-w-[1320px] gap-6 px-4 py-8 sm:grid-cols-3 sm:gap-8 sm:px-8 sm:py-10">
+            {contrasts.map((c, i) => (
+              <Reveal key={c.label} delay={i * 0.06}>
+                <p className="font-serif text-lg leading-snug text-navy sm:text-xl">
+                  {c.label} <span className="text-muted-foreground">{c.body}</span>
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* Who uses it + examples they read */}
+        <section
+          id="profiles"
+          className="mx-auto max-w-[1320px] px-4 py-12 sm:px-8 sm:py-16"
+          aria-labelledby="readers-heading"
+        >
+          <Reveal>
+            <p className="eyebrow">Who uses it</p>
+            <h2 id="readers-heading" className="mt-3 max-w-2xl text-2xl text-navy sm:text-4xl">
+              One profile. Six questions. Four live examples.
+            </h2>
+          </Reveal>
+
+          <dl className="mt-8 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+            {audiences.map((r, i) => (
+              <Reveal
+                key={r.role}
+                delay={i * 0.04}
+                className="flex items-start gap-4 bg-card p-5 transition-colors hover:bg-secondary sm:p-6"
+              >
+                <r.icon className="mt-0.5 h-5 w-5 shrink-0 text-green" aria-hidden="true" strokeWidth={1.5} />
+                <div>
+                  <dt className="font-serif text-lg text-navy">{r.role}</dt>
+                  <dd className="mt-1 text-sm leading-relaxed text-muted-foreground">{r.question}</dd>
+                </div>
+              </Reveal>
+            ))}
+          </dl>
+
+          <h3 className="mt-12 text-sm text-navy">Sample product profiles</h3>
+          <ul className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {profiles.map((p, i) => (
+              <Reveal as="li" key={p.name} delay={i * 0.06}>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group card-lift block rounded-sm"
+                >
+                  <article>
+                    <div className="media-zoom rounded-sm bg-secondary">
+                      <img
+                        src={p.img}
+                        alt={`${p.type} from ${p.origin}`}
+                        width={1024}
+                        height={768}
+                        loading="lazy"
+                        decoding="async"
+                        className="aspect-[4/3] w-full object-cover"
+                      />
+                    </div>
+                    <h4 className="mt-4 font-serif text-lg text-navy">{p.name}</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {p.type} · {p.origin}
+                    </p>
+                  </article>
+                </a>
+              </Reveal>
+            ))}
+          </ul>
+        </section>
+
+        {/* How it works — steps + the four layers */}
+        <section className="rule-top bg-card/40" aria-labelledby="how-heading">
+          <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-8 sm:py-16">
+            <Reveal>
+              <p className="eyebrow">How it works</p>
+              <h2 id="how-heading" className="mt-3 max-w-2xl text-2xl text-navy sm:text-4xl">
+                Declare, structure, share — inside a layer no certificate reads.
+              </h2>
+            </Reveal>
+
+            <ol className="mt-8 grid items-start gap-6 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:gap-4">
               {steps.map((s, i) => (
                 <Fragment key={s.title}>
-                  <li className="flex items-start gap-4 sm:gap-5">
-                    <span className="flex h-14 w-14 sm:h-[4.25rem] sm:w-[4.25rem] shrink-0 items-center justify-center rounded-full bg-secondary">
-                      <s.icon className="h-6 w-6 text-green" aria-hidden="true" strokeWidth={1.4} />
+                  <li className="flex items-start gap-4">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary sm:h-14 sm:w-14">
+                      <s.icon className="h-5 w-5 text-green" aria-hidden="true" strokeWidth={1.4} />
                     </span>
                     <div>
                       <h3 className="font-serif text-xl text-navy">{s.title}</h3>
-                      <p className="mt-1.5 max-w-[26ch] text-sm leading-relaxed text-muted-foreground">
-                        {s.short}
+                      <p className="mt-1.5 max-w-[30ch] text-sm leading-relaxed text-muted-foreground">
+                        {s.body}
                       </p>
                     </div>
                   </li>
                   {i < steps.length - 1 && (
                     <span
                       aria-hidden="true"
-                      className="mx-auto hidden h-px w-16 border-t border-dashed border-navy/25 sm:block"
+                      className="mx-auto mt-6 hidden h-px w-12 border-t border-dashed border-navy/25 sm:block"
                     />
                   )}
                 </Fragment>
-
               ))}
             </ol>
-          </Reveal>
-        </section>
 
-        {/* Used by strip */}
-        <section aria-label="Used by" className="border-y border-border bg-secondary/70">
-          <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-center gap-x-6 gap-y-4 px-4 py-5 sm:gap-x-10 sm:gap-y-5 sm:py-6 text-center sm:px-8">
-            <p className="text-sm font-medium text-navy">Used by</p>
-            {audiences.map((r) => (
-              <div key={r.role} className="flex items-center gap-2.5">
-                <r.icon className="h-5 w-5 text-green" aria-hidden="true" strokeWidth={1.3} />
-                <span className="text-sm text-muted-foreground">{r.plural}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-
-        {/* Who it serves */}
-        <section className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-28" aria-labelledby="readers-heading">
-          <Reveal>
-            <p className="eyebrow">Who it serves</p>
-            <h2 id="readers-heading" className="mt-4 max-w-2xl text-2xl text-navy sm:text-4xl">
-              One profile. Six questions.
-            </h2>
-          </Reveal>
-          <dl className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-            {audiences.map((r, i) => (
-              <Reveal key={r.role} delay={i * 0.05} className="bg-card p-6 transition-colors hover:bg-secondary sm:p-8">
-                <r.icon className="h-5 w-5 text-green" aria-hidden="true" strokeWidth={1.5} />
-                <dt className="mt-5 font-serif text-lg text-navy">{r.role}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{r.question}</dd>
-              </Reveal>
-            ))}
-          </dl>
-        </section>
-
-        {/* Sample profiles */}
-        <section className="rule-top" id="profiles" aria-labelledby="profiles-heading">
-          <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-24">
-            <Reveal>
-              <p className="eyebrow">Sample product profiles</p>
-              <h2 id="profiles-heading" className="mt-4 max-w-2xl text-2xl text-navy sm:text-4xl">
-                Four products. One intelligence structure.
-              </h2>
-            </Reveal>
-            <ul className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
-              {profiles.map((p, i) => (
-                <Reveal as="li" key={p.name} delay={i * 0.06}>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group card-lift block rounded-sm"
-                  >
-                    <article>
-                      <div className="media-zoom rounded-sm bg-secondary">
-                        <img
-                          src={p.img}
-                          alt={`${p.type} from ${p.origin}`}
-                          width={1024}
-                          height={768}
-                          loading="lazy"
-                          decoding="async"
-                          className="aspect-[4/3] w-full object-cover"
-                        />
-                      </div>
-                      <h3 className="mt-5 font-serif text-xl text-navy">{p.name}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {p.type} · {p.origin}
-                      </p>
-                    </article>
-                  </a>
-                </Reveal>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Contrast band */}
-        <section className="rule-top bg-secondary/60" aria-label="What each layer does">
-          <div className="mx-auto grid max-w-[1320px] gap-px overflow-hidden px-4 py-16 sm:grid-cols-3 sm:px-8 sm:py-20">
-            {contrasts.map((c, i) => (
-              <Reveal key={c.label} delay={i * 0.06} className="px-1 sm:px-8">
-                <p className="font-serif text-xl leading-snug text-navy sm:text-2xl">
-                  {c.label}{" "}
-                  <span className="text-muted-foreground">{c.body}</span>
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
-        {/* The fourth layer */}
-        <section className="rule-top" aria-labelledby="fourth-layer-heading">
-          <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-28">
-            <div className="grid gap-14 lg:grid-cols-[45fr_55fr]">
+            <div className="mt-12 grid gap-8 lg:grid-cols-[38fr_62fr] lg:items-start">
               <Reveal>
                 <p className="eyebrow">The fourth layer</p>
-                <h2
-                  id="fourth-layer-heading"
-                  className="mt-4 max-w-[20ch] font-serif text-3xl leading-[1.15] text-navy sm:text-[2.5rem]"
-                >
-                  Most of what makes a product distinct lives in a layer no certificate reads.
-                </h2>
-                <p className="mt-6 max-w-[52ch] text-[1.0625rem] leading-relaxed text-muted-foreground">
+                <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
                   International, national and community records each hold part of the story. The
                   fourth layer is the producer&apos;s own intelligence — how the product was grown,
                   cured, handled and tested — structured and shown honestly, state by state.
                 </p>
               </Reveal>
-              <ol className="grid gap-px overflow-hidden rounded-lg border border-border bg-border">
+              <ol className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
                 {layers.map((l, i) => (
                   <Reveal
                     as="li"
                     key={l.code}
                     delay={i * 0.05}
-                    className={`flex items-baseline gap-4 p-6 sm:gap-6 sm:p-7 ${
-                      l.code === "L4" ? "bg-secondary" : "bg-card"
-                    }`}
+                    className={`p-5 ${l.code === "L4" ? "bg-secondary" : "bg-card"}`}
                   >
                     <span className="font-serif text-sm text-green">{l.code}</span>
-                    <span>
-                      <span className="block font-serif text-lg text-navy">{l.name}</span>
-                      <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
-                        {l.body}
-                      </span>
+                    <span className="mt-2 block font-serif text-base text-navy">{l.name}</span>
+                    <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                      {l.body}
                     </span>
                   </Reveal>
                 ))}
@@ -367,22 +341,22 @@ function Home() {
           </div>
         </section>
 
-        {/* One profile, read honestly */}
+        {/* Producer journey — one profile, read honestly */}
         <section className="rule-top bg-secondary/50" aria-labelledby="honest-heading">
-          <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-8 sm:py-16">
             <Reveal>
-              <p className="eyebrow">One turmeric profile, read honestly</p>
-              <h2 id="honest-heading" className="mt-4 max-w-2xl text-2xl text-navy sm:text-4xl">
+              <p className="eyebrow">Producer journey</p>
+              <h2 id="honest-heading" className="mt-3 max-w-2xl text-2xl text-navy sm:text-4xl">
                 Every field carries its own evidence state.
               </h2>
             </Reveal>
-            <div className="mt-12 grid gap-10 lg:grid-cols-[55fr_45fr]">
+            <div className="mt-8 grid gap-8 lg:grid-cols-[55fr_45fr]">
               <Reveal>
                 <dl className="grid gap-px overflow-hidden rounded-lg border border-border bg-border">
                   {turmericFields.map((f) => (
                     <div
                       key={f.field}
-                      className="flex flex-wrap items-center justify-between gap-2 bg-card px-5 py-4 sm:gap-3 sm:px-6 sm:py-5"
+                      className="flex flex-wrap items-center justify-between gap-2 bg-card px-5 py-3.5 sm:gap-3 sm:px-6 sm:py-4"
                     >
                       <dt className="text-sm text-navy">{f.field}</dt>
                       <dd className="rounded-full border border-navy/15 px-3 py-1 text-xs text-muted-foreground">
@@ -397,7 +371,7 @@ function Home() {
                   Missing isn&apos;t withheld, and withheld isn&apos;t undocumented — each is its own
                   honest state, never a mark against the producer, and never summed into a score.
                 </p>
-                <ul className="mt-7 space-y-3">
+                <ul className="mt-5 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-1">
                   {evidenceStates.map((e) => (
                     <li key={e.state} className="text-sm leading-relaxed">
                       <span className="text-navy">{e.state}</span>
@@ -410,63 +384,65 @@ function Home() {
           </div>
         </section>
 
-        {/* Philosophy */}
+        {/* Philosophy + methodology and engage */}
         <section className="rule-top bg-secondary" aria-labelledby="philosophy-heading">
-          <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-8 sm:py-16">
             <Reveal>
               <p className="eyebrow">Philosophy</p>
               <blockquote
                 id="philosophy-heading"
-                className="mt-6 max-w-3xl font-serif text-3xl leading-[1.25] text-navy sm:text-[2.75rem]"
+                className="mt-4 max-w-3xl font-serif text-2xl leading-[1.25] text-navy sm:text-[2.25rem]"
               >
                 HEDAMO structures what the producer declares.
               </blockquote>
             </Reveal>
-            <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {boundaries.map((b, i) => (
-                <Reveal as="li" key={b} delay={i * 0.05} className="border-t border-navy/15 pt-4 text-sm leading-relaxed text-muted-foreground">
+                <Reveal
+                  as="li"
+                  key={b}
+                  delay={i * 0.05}
+                  className="border-t border-navy/15 pt-4 text-sm leading-relaxed text-muted-foreground"
+                >
                   {b}
                 </Reveal>
               ))}
             </ul>
-          </div>
-        </section>
 
-        {/* Methodology & Engage */}
-        <section className="rule-top" aria-label="Methodology and engagement">
-          <div className="mx-auto grid max-w-[1320px] gap-px overflow-hidden px-4 py-20 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-16">
-            <Reveal>
-              <h3 className="font-serif text-2xl text-navy">Methodology</h3>
-              <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
-                How product information becomes structured, portable, and gap-visible.
-              </p>
-              <a
-                href="#how-heading"
-                className="group mt-6 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
-              >
-                Read the methodology
-                <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
-              </a>
-            </Reveal>
-            <Reveal delay={0.08} className="mt-12 lg:mt-0">
-              <h3 className="font-serif text-2xl text-navy">Engage</h3>
-              <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
-                For institutional briefings, disclosure readiness, or research correspondence.
-              </p>
-              <Link
-                to="/backlog"
-                className="group mt-6 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
-              >
-                Share your question
-                <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
-              </Link>
-            </Reveal>
+            <div className="mt-10 grid gap-6 border-t border-navy/15 pt-8 lg:grid-cols-2 lg:gap-16">
+              <Reveal>
+                <h3 className="font-serif text-xl text-navy">Methodology</h3>
+                <p className="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                  How product information becomes structured, portable, and gap-visible.
+                </p>
+                <a
+                  href="#how-heading"
+                  className="group mt-4 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
+                >
+                  Read the methodology
+                  <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
+                </a>
+              </Reveal>
+              <Reveal delay={0.08}>
+                <h3 className="font-serif text-xl text-navy">Engage</h3>
+                <p className="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                  For institutional briefings, disclosure readiness, or research correspondence.
+                </p>
+                <Link
+                  to="/backlog"
+                  className="group mt-4 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
+                >
+                  Share your question
+                  <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
+                </Link>
+              </Reveal>
+            </div>
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section className="rule-top bg-secondary/50" aria-label="Start with HEDAMO">
-          <div className="mx-auto flex max-w-[1320px] flex-col items-center px-4 py-16 text-center sm:px-8 sm:py-20">
+        <section className="rule-top" aria-label="Start with HEDAMO">
+          <div className="mx-auto flex max-w-[1320px] flex-col items-center px-4 py-12 text-center sm:px-8 sm:py-16">
             <Reveal>
               <h2 className="max-w-[22ch] font-serif text-2xl leading-snug text-navy sm:text-3xl">
                 Ready to structure your product intelligence?
@@ -477,7 +453,7 @@ function Home() {
                 href="https://hedamo-product-disclosure-ai.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group btn-primary mt-8 inline-flex w-full items-center justify-center gap-3 rounded-sm bg-navy px-8 py-4 sm:w-auto text-sm text-primary-foreground"
+                className="group btn-primary mt-6 inline-flex w-full items-center justify-center gap-3 rounded-sm bg-navy px-8 py-4 text-sm text-primary-foreground sm:w-auto"
               >
                 Start producer application
                 <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
