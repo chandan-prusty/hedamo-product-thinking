@@ -197,7 +197,7 @@ function BacklogPage() {
           </Reveal>
           <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-3">
             {QUADRANTS.map((q, i) => (
-              <Reveal key={q.label} delay={i * 0.07} className="bg-card p-7">
+              <Reveal key={q.label} delay={i * 0.07} className="bg-card p-5 sm:p-7">
                 <div className={`border-l-2 pl-4 ${q.tone}`}>
                   <h3 className="font-serif text-2xl text-navy">{q.label}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{q.axis}</p>

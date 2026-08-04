@@ -203,7 +203,7 @@ function ApplicationsPage() {
               exit={{ x: "100%" }}
               transition={{ duration: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
             >
-              <div className="flex items-start justify-between gap-4 border-b border-border p-7">
+              <div className="flex items-start justify-between gap-4 border-b border-border p-5 sm:p-7">
                 <div>
                   <p className="eyebrow">{active.status}</p>
                   <h2 className="mt-2 font-serif text-2xl text-navy sm:text-3xl">{active.product}</h2>
@@ -221,7 +221,7 @@ function ApplicationsPage() {
                 </button>
               </div>
 
-              <div className="space-y-9 p-7">
+              <div className="space-y-9 p-5 sm:p-7">
                 <section>
                   <h3 className="eyebrow">Application summary</h3>
                   <p className="mt-3 text-sm leading-relaxed text-foreground">{active.summary}</p>
