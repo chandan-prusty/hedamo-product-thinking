@@ -187,16 +187,20 @@ function Home() {
                   href="#profiles"
                   className="group btn-primary inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground"
                 >
-                  Explore product profile
+                  View sample product profile
                   <ArrowRight className="arrow-slide h-4 w-4" aria-hidden="true" />
                 </a>
                 <Link
                   to="/applications"
                   className="btn-secondary inline-flex items-center justify-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy"
                 >
-                  Start producer application
+                  Create product declaration
                 </Link>
+                <p className="w-full text-sm text-muted-foreground sm:pt-1">
+                  View an example before starting your own declaration.
+                </p>
               </motion.div>
+
             </div>
 
             {/* Editorial photo composition */}
