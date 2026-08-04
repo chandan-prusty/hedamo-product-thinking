@@ -457,6 +457,25 @@ function Home() {
           </div>
         </section>
 
+        {/* Bottom CTA */}
+        <section className="rule-top bg-secondary/50" aria-label="Start with HEDAMO">
+          <div className="mx-auto flex max-w-[1320px] flex-col items-center px-5 py-16 text-center sm:px-8 sm:py-20">
+            <Reveal>
+              <h2 className="max-w-[22ch] font-serif text-2xl leading-snug text-navy sm:text-3xl">
+                Ready to structure your product intelligence?
+              </h2>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <Link
+                to="/applications"
+                className="mt-8 inline-flex items-center gap-3 rounded-sm bg-navy px-8 py-4 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
+              >
+                Start producer application
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Reveal>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>
