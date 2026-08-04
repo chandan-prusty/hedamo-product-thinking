@@ -151,10 +151,10 @@ function BacklogPage() {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <main id="main-content" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <main id="main-content" className="mx-auto max-w-6xl px-4 py-10 sm:px-8 sm:py-20">
         <Reveal>
           <p className="eyebrow">Product backlog</p>
-          <h1 className="mt-4 font-serif text-4xl text-navy sm:text-5xl">
+          <h1 className="mt-4 font-serif text-3xl text-navy sm:text-5xl">
             Observed Product Opportunities
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
@@ -191,13 +191,13 @@ function BacklogPage() {
         <section className="mt-24" aria-labelledby="matrix-heading">
           <Reveal>
             <p className="eyebrow">Prioritisation</p>
-            <h2 id="matrix-heading" className="mt-4 text-3xl text-navy">
+            <h2 id="matrix-heading" className="mt-4 text-2xl text-navy sm:text-3xl">
               Priority matrix
             </h2>
           </Reveal>
           <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-3">
             {QUADRANTS.map((q, i) => (
-              <Reveal key={q.label} delay={i * 0.07} className="bg-card p-7">
+              <Reveal key={q.label} delay={i * 0.07} className="bg-card p-5 sm:p-7">
                 <div className={`border-l-2 pl-4 ${q.tone}`}>
                   <h3 className="font-serif text-2xl text-navy">{q.label}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{q.axis}</p>
