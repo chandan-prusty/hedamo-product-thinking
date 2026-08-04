@@ -111,17 +111,17 @@ function ApplicationsPage() {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <main id="main-content" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <main id="main-content" className="mx-auto max-w-6xl px-4 py-10 sm:px-8 sm:py-20">
         <Reveal>
           <p className="eyebrow">Producer dashboard</p>
-          <h1 className="mt-4 font-serif text-4xl text-navy sm:text-5xl">My Applications</h1>
+          <h1 className="mt-4 font-serif text-3xl text-navy sm:text-5xl">My Applications</h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
             Five declarations in progress. Every stage, note and gap is shown as it stands — nothing
             is scored or summarised.
           </p>
         </Reveal>
 
-        <ul className="mt-14 grid gap-6 lg:grid-cols-2">
+        <ul className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-2">
           {APPLICATIONS.map((app, i) => (
             <Reveal as="li" key={app.id} delay={i * 0.06}>
               <article className="h-full border border-border bg-card">
@@ -148,7 +148,7 @@ function ApplicationsPage() {
                       <dt className="eyebrow">Submitted</dt>
                       <dd className="mt-1 text-foreground">{app.submitted}</dd>
                     </div>
-                    <div className="min-w-[9rem] flex-1">
+                    <div className="min-w-[7.5rem] flex-1">
                       <dt className="eyebrow">Progress</dt>
                       <dd className="mt-2 flex items-center gap-3">
                         <span className="h-1 flex-1 bg-border" aria-hidden="true">
@@ -206,7 +206,7 @@ function ApplicationsPage() {
               <div className="flex items-start justify-between gap-4 border-b border-border p-7">
                 <div>
                   <p className="eyebrow">{active.status}</p>
-                  <h2 className="mt-2 font-serif text-3xl text-navy">{active.product}</h2>
+                  <h2 className="mt-2 font-serif text-2xl text-navy sm:text-3xl">{active.product}</h2>
                   <p className="mt-1 text-xs text-muted-foreground">
                     {active.category} · submitted {active.submitted}
                   </p>

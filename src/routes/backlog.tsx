@@ -151,10 +151,10 @@ function BacklogPage() {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <main id="main-content" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <main id="main-content" className="mx-auto max-w-6xl px-4 py-10 sm:px-8 sm:py-20">
         <Reveal>
           <p className="eyebrow">Product backlog</p>
-          <h1 className="mt-4 font-serif text-4xl text-navy sm:text-5xl">
+          <h1 className="mt-4 font-serif text-3xl text-navy sm:text-5xl">
             Observed Product Opportunities
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
@@ -191,7 +191,7 @@ function BacklogPage() {
         <section className="mt-24" aria-labelledby="matrix-heading">
           <Reveal>
             <p className="eyebrow">Prioritisation</p>
-            <h2 id="matrix-heading" className="mt-4 text-3xl text-navy">
+            <h2 id="matrix-heading" className="mt-4 text-2xl text-navy sm:text-3xl">
               Priority matrix
             </h2>
           </Reveal>
