@@ -132,7 +132,7 @@ function Home() {
         {/* Hero */}
         <section
           aria-labelledby="hero-heading"
-          className="mx-auto max-w-[1320px] px-5 pt-14 pb-10 sm:px-8 sm:pt-20"
+          className="mx-auto max-w-[1320px] px-4 pt-10 pb-8 sm:px-8 sm:pt-20 sm:pb-10"
         >
           <div className="grid w-full items-center gap-12 lg:grid-cols-[55fr_45fr] lg:gap-14">
             <div>
@@ -163,21 +163,21 @@ function Home() {
                 transparent product profile.
               </motion.p>
               <motion.div
-                className="mt-10 flex flex-wrap items-center gap-3"
+                className="mt-8 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.24 }}
               >
                 <a
                   href="#profiles"
-                  className="inline-flex items-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
+                  className="inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
                 >
                   Explore product profile
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
                 <Link
                   to="/applications"
-                  className="inline-flex items-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy transition-all hover:-translate-y-0.5 hover:bg-secondary"
+                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy transition-all hover:-translate-y-0.5 hover:bg-secondary"
                 >
                   Start producer application
                 </Link>
@@ -204,16 +204,16 @@ function Home() {
         </section>
 
         {/* How HEDAMO works — connected panel */}
-        <section aria-labelledby="how-heading" className="mx-auto max-w-[1320px] px-5 pb-16 sm:px-8">
+        <section aria-labelledby="how-heading" className="mx-auto max-w-[1320px] px-4 pb-16 sm:px-8">
           <h2 id="how-heading" className="sr-only">
             How HEDAMO works
           </h2>
-          <Reveal className="rounded-2xl border border-border bg-card/60 px-6 py-10 sm:px-10">
+          <Reveal className="rounded-2xl border border-border bg-card/60 px-5 py-8 sm:px-10 sm:py-10">
             <ol className="grid items-center gap-8 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:gap-4">
               {steps.map((s, i) => (
                 <Fragment key={s.title}>
-                  <li className="flex items-start gap-5">
-                    <span className="flex h-[4.25rem] w-[4.25rem] shrink-0 items-center justify-center rounded-full bg-secondary">
+                  <li className="flex items-start gap-4 sm:gap-5">
+                    <span className="flex h-14 w-14 sm:h-[4.25rem] sm:w-[4.25rem] shrink-0 items-center justify-center rounded-full bg-secondary">
                       <s.icon className="h-6 w-6 text-green" aria-hidden="true" strokeWidth={1.4} />
                     </span>
                     <div>
@@ -238,7 +238,7 @@ function Home() {
 
         {/* Used by strip */}
         <section aria-label="Used by" className="border-y border-border bg-secondary/70">
-          <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-center gap-x-10 gap-y-5 px-5 py-6 text-center sm:px-8">
+          <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-center gap-x-6 gap-y-4 px-4 py-5 sm:gap-x-10 sm:gap-y-5 sm:py-6 text-center sm:px-8">
             <p className="text-sm font-medium text-navy">Used by</p>
             {audiences.map((r) => (
               <div key={r.role} className="flex items-center gap-2.5">
@@ -251,16 +251,16 @@ function Home() {
 
 
         {/* Who it serves */}
-        <section className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 sm:py-28" aria-labelledby="readers-heading">
+        <section className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-28" aria-labelledby="readers-heading">
           <Reveal>
             <p className="eyebrow">Who it serves</p>
-            <h2 id="readers-heading" className="mt-4 max-w-2xl text-3xl text-navy sm:text-4xl">
+            <h2 id="readers-heading" className="mt-4 max-w-2xl text-2xl text-navy sm:text-4xl">
               One profile. Six questions.
             </h2>
           </Reveal>
           <dl className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
             {audiences.map((r, i) => (
-              <Reveal key={r.role} delay={i * 0.05} className="bg-card p-8 transition-colors hover:bg-secondary">
+              <Reveal key={r.role} delay={i * 0.05} className="bg-card p-6 transition-colors hover:bg-secondary sm:p-8">
                 <r.icon className="h-5 w-5 text-green" aria-hidden="true" strokeWidth={1.5} />
                 <dt className="mt-5 font-serif text-lg text-navy">{r.role}</dt>
                 <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{r.question}</dd>
@@ -271,14 +271,14 @@ function Home() {
 
         {/* Sample profiles */}
         <section className="rule-top" id="profiles" aria-labelledby="profiles-heading">
-          <div className="mx-auto max-w-[1320px] px-5 py-16 sm:px-8 sm:py-24">
+          <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-24">
             <Reveal>
               <p className="eyebrow">Sample product profiles</p>
-              <h2 id="profiles-heading" className="mt-4 max-w-2xl text-3xl text-navy sm:text-4xl">
+              <h2 id="profiles-heading" className="mt-4 max-w-2xl text-2xl text-navy sm:text-4xl">
                 Four products. One intelligence structure.
               </h2>
             </Reveal>
-            <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
               {profiles.map((p, i) => (
                 <Reveal as="li" key={p.name} delay={i * 0.06}>
                   <article className="group">
@@ -306,10 +306,10 @@ function Home() {
 
         {/* Contrast band */}
         <section className="rule-top bg-secondary/60" aria-label="What each layer does">
-          <div className="mx-auto grid max-w-[1320px] gap-px overflow-hidden px-5 py-16 sm:grid-cols-3 sm:px-8 sm:py-20">
+          <div className="mx-auto grid max-w-[1320px] gap-px overflow-hidden px-4 py-16 sm:grid-cols-3 sm:px-8 sm:py-20">
             {contrasts.map((c, i) => (
               <Reveal key={c.label} delay={i * 0.06} className="px-1 sm:px-8">
-                <p className="font-serif text-2xl leading-snug text-navy">
+                <p className="font-serif text-xl leading-snug text-navy sm:text-2xl">
                   {c.label}{" "}
                   <span className="text-muted-foreground">{c.body}</span>
                 </p>
@@ -320,7 +320,7 @@ function Home() {
 
         {/* The fourth layer */}
         <section className="rule-top" aria-labelledby="fourth-layer-heading">
-          <div className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-28">
             <div className="grid gap-14 lg:grid-cols-[45fr_55fr]">
               <Reveal>
                 <p className="eyebrow">The fourth layer</p>
@@ -342,7 +342,7 @@ function Home() {
                     as="li"
                     key={l.code}
                     delay={i * 0.05}
-                    className={`flex items-baseline gap-6 p-7 ${
+                    className={`flex items-baseline gap-4 p-6 sm:gap-6 sm:p-7 ${
                       l.code === "L4" ? "bg-secondary" : "bg-card"
                     }`}
                   >
@@ -362,10 +362,10 @@ function Home() {
 
         {/* One profile, read honestly */}
         <section className="rule-top bg-secondary/50" aria-labelledby="honest-heading">
-          <div className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-28">
             <Reveal>
               <p className="eyebrow">One turmeric profile, read honestly</p>
-              <h2 id="honest-heading" className="mt-4 max-w-2xl text-3xl text-navy sm:text-4xl">
+              <h2 id="honest-heading" className="mt-4 max-w-2xl text-2xl text-navy sm:text-4xl">
                 Every field carries its own evidence state.
               </h2>
             </Reveal>
@@ -375,7 +375,7 @@ function Home() {
                   {turmericFields.map((f) => (
                     <div
                       key={f.field}
-                      className="flex flex-wrap items-center justify-between gap-3 bg-card px-6 py-5"
+                      className="flex flex-wrap items-center justify-between gap-2 bg-card px-5 py-4 sm:gap-3 sm:px-6 sm:py-5"
                     >
                       <dt className="text-sm text-navy">{f.field}</dt>
                       <dd className="rounded-full border border-navy/15 px-3 py-1 text-xs text-muted-foreground">
@@ -405,7 +405,7 @@ function Home() {
 
         {/* Philosophy */}
         <section className="rule-top bg-secondary" aria-labelledby="philosophy-heading">
-          <div className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-8 sm:py-28">
             <Reveal>
               <p className="eyebrow">Philosophy</p>
               <blockquote
@@ -427,7 +427,7 @@ function Home() {
 
         {/* Methodology & Engage */}
         <section className="rule-top" aria-label="Methodology and engagement">
-          <div className="mx-auto grid max-w-[1320px] gap-px overflow-hidden px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-16">
+          <div className="mx-auto grid max-w-[1320px] gap-px overflow-hidden px-4 py-20 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-16">
             <Reveal>
               <h3 className="font-serif text-2xl text-navy">Methodology</h3>
               <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
@@ -459,7 +459,7 @@ function Home() {
 
         {/* Bottom CTA */}
         <section className="rule-top bg-secondary/50" aria-label="Start with HEDAMO">
-          <div className="mx-auto flex max-w-[1320px] flex-col items-center px-5 py-16 text-center sm:px-8 sm:py-20">
+          <div className="mx-auto flex max-w-[1320px] flex-col items-center px-4 py-16 text-center sm:px-8 sm:py-20">
             <Reveal>
               <h2 className="max-w-[22ch] font-serif text-2xl leading-snug text-navy sm:text-3xl">
                 Ready to structure your product intelligence?
@@ -470,7 +470,7 @@ function Home() {
                 href="https://hedamo-product-disclosure-ai.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-3 rounded-sm bg-navy px-8 py-4 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
+                className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-sm bg-navy px-8 py-4 sm:w-auto text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
               >
                 Start producer application
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
