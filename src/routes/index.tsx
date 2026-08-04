@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   FileText,
@@ -5,11 +6,11 @@ import {
   Share2,
   ArrowRight,
   Sprout,
-  ShoppingBag,
+  UserRound,
   Landmark,
-  Microscope,
-  Building2,
-  Handshake,
+  ShoppingCart,
+  FlaskConical,
+  Globe,
 } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -19,6 +20,8 @@ import olive from "@/assets/olive.jpg";
 import coffee from "@/assets/coffee.jpg";
 import rice from "@/assets/rice.jpg";
 import cardamom from "@/assets/cardamom.jpg";
+import heroComposition from "@/assets/hero-composition.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,16 +47,19 @@ const steps = [
   {
     icon: FileText,
     title: "Declare",
+    short: "Producers declare what they know about their product.",
     body: "The producer records what they know — practices, testing, origin — in their own words.",
   },
   {
     icon: Layers,
     title: "Structure",
+    short: "HEDAMO structures the information into a standard product profile.",
     body: "Each statement is placed in a fixed structure, with its evidence state shown honestly.",
   },
   {
     icon: Share2,
     title: "Share",
+    short: "The profile is portable, transparent, and ready to be shared.",
     body: "The profile travels with the product, readable by anyone who needs to understand it.",
   },
 ];
@@ -66,13 +72,14 @@ const profiles = [
 ];
 
 const audiences = [
-  { icon: Sprout, role: "Producer", question: "Does my distinction travel?" },
-  { icon: ShoppingBag, role: "Buyer", question: "What am I actually sourcing?" },
-  { icon: Landmark, role: "Institution", question: "What is declared and what is not?" },
-  { icon: Microscope, role: "Researcher", question: "Can this be compared across regions?" },
-  { icon: Building2, role: "Government", question: "Is the record legible at scale?" },
-  { icon: Handshake, role: "Trade body", question: "Can producers be seen beyond codes?" },
+  { icon: Sprout, role: "Producer", plural: "Producers", question: "Does my distinction travel?" },
+  { icon: UserRound, role: "Reviewer", plural: "Reviewers", question: "What is declared and what is not?" },
+  { icon: Landmark, role: "Institution", plural: "Institutions", question: "Is the record legible at scale?" },
+  { icon: ShoppingCart, role: "Buyer", plural: "Buyers", question: "What am I actually sourcing?" },
+  { icon: FlaskConical, role: "Researcher", plural: "Researchers", question: "Can this be compared across regions?" },
+  { icon: Globe, role: "Trade body", plural: "Trade Bodies", question: "Can producers be seen beyond codes?" },
 ];
+
 
 const ease = [0.22, 0.61, 0.36, 1] as const;
 
@@ -84,9 +91,9 @@ function Home() {
         {/* Hero */}
         <section
           aria-labelledby="hero-heading"
-          className="mx-auto flex min-h-[90vh] max-w-[1320px] items-center px-5 py-16 sm:px-8 sm:py-20"
+          className="mx-auto max-w-[1320px] px-5 pt-14 pb-10 sm:px-8 sm:pt-20"
         >
-          <div className="grid w-full items-center gap-14 lg:grid-cols-[55fr_45fr] lg:gap-16">
+          <div className="grid w-full items-center gap-12 lg:grid-cols-[55fr_45fr] lg:gap-14">
             <div>
               <motion.p
                 className="eyebrow"
@@ -98,23 +105,21 @@ function Home() {
               </motion.p>
               <motion.h1
                 id="hero-heading"
-                className="mt-6 max-w-[15ch] font-serif text-[2.6rem] leading-[1.06] text-navy sm:text-6xl lg:text-[4.25rem]"
+                className="mt-6 max-w-[14ch] font-serif text-[2.6rem] leading-[1.04] text-navy sm:text-6xl lg:text-[4.5rem]"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, ease }}
               >
-                The product moves.
-                <br />
-                The understanding doesn&apos;t.
+                The product moves. The understanding doesn&apos;t.
               </motion.h1>
               <motion.p
-                className="mt-8 max-w-[52ch] text-[1.0625rem] leading-relaxed text-muted-foreground"
+                className="mt-8 max-w-[46ch] text-[1.0625rem] leading-relaxed text-muted-foreground"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.12 }}
               >
                 HEDAMO structures producer-declared product intelligence into a portable,
-                transparent product profile that can travel with every product.
+                transparent product profile.
               </motion.p>
               <motion.div
                 className="mt-10 flex flex-wrap items-center gap-3"
@@ -124,97 +129,85 @@ function Home() {
               >
                 <a
                   href="#profiles"
-                  className="inline-flex items-center gap-2 rounded-sm bg-navy px-6 py-3 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
+                  className="inline-flex items-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground transition-all hover:-translate-y-0.5 hover:opacity-90"
                 >
                   Explore product profile
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
                 <Link
                   to="/applications"
-                  className="inline-flex items-center gap-2 rounded-sm border border-navy/25 px-6 py-3 text-sm text-navy transition-all hover:-translate-y-0.5 hover:bg-secondary"
+                  className="inline-flex items-center gap-2 rounded-sm border border-navy/20 px-7 py-3.5 text-sm text-navy transition-all hover:-translate-y-0.5 hover:bg-secondary"
                 >
                   Start producer application
                 </Link>
               </motion.div>
-              <motion.p
-                className="mt-8 text-[13px] text-muted-foreground"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.36 }}
-              >
-                Used by Producers • Buyers • Institutions • Researchers
-              </motion.p>
             </div>
 
             {/* Editorial photo composition */}
             <motion.div
-              aria-hidden="true"
-              className="relative mx-auto hidden aspect-[4/5] w-full max-w-[520px] sm:block"
+              className="relative mx-auto w-full max-w-[620px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15, ease }}
             >
               <img
-                src={olive}
-                alt=""
-                loading="lazy"
+                src={heroComposition}
+                alt="Olive branch with bowls of olives, cardamom, coffee beans, rice and olive oil"
+                width={1200}
+                height={1008}
                 decoding="async"
-                className="absolute top-0 left-0 h-[58%] w-[62%] rounded-sm object-cover shadow-[0_30px_60px_-30px_rgba(20,30,55,0.35)]"
-              />
-              <img
-                src={coffee}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                className="absolute top-[16%] right-0 h-[34%] w-[34%] rounded-sm object-cover shadow-[0_24px_50px_-26px_rgba(20,30,55,0.4)]"
-              />
-              <img
-                src={cardamom}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                className="absolute bottom-0 left-[8%] h-[36%] w-[36%] rounded-sm object-cover shadow-[0_24px_50px_-26px_rgba(20,30,55,0.4)]"
-              />
-              <img
-                src={rice}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                className="absolute right-[2%] bottom-[6%] h-[46%] w-[52%] rounded-sm object-cover shadow-[0_30px_60px_-30px_rgba(20,30,55,0.35)]"
+                className="w-full rounded-sm object-cover mix-blend-multiply drop-shadow-[0_40px_70px_rgba(20,30,55,0.16)]"
               />
             </motion.div>
           </div>
         </section>
 
-        {/* How it works */}
-        <section aria-labelledby="how-heading" className="mx-auto max-w-[1320px] px-5 sm:px-8">
-          <Reveal className="rounded-2xl border border-border bg-card px-6 py-14 sm:px-12 sm:py-16">
-            <p className="eyebrow">In three steps</p>
-            <h2 id="how-heading" className="mt-4 max-w-2xl text-3xl text-navy sm:text-4xl">
-              How HEDAMO works
-            </h2>
-            <ol className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-6">
+        {/* How HEDAMO works — connected panel */}
+        <section aria-labelledby="how-heading" className="mx-auto max-w-[1320px] px-5 pb-16 sm:px-8">
+          <h2 id="how-heading" className="sr-only">
+            How HEDAMO works
+          </h2>
+          <Reveal className="rounded-2xl border border-border bg-card/60 px-6 py-10 sm:px-10">
+            <ol className="grid items-center gap-8 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:gap-4">
               {steps.map((s, i) => (
-                <Reveal as="li" key={s.title} delay={i * 0.08} className="relative">
+                <Fragment key={s.title}>
+                  <li className="flex items-start gap-5">
+                    <span className="flex h-[4.25rem] w-[4.25rem] shrink-0 items-center justify-center rounded-full bg-secondary">
+                      <s.icon className="h-6 w-6 text-green" aria-hidden="true" strokeWidth={1.4} />
+                    </span>
+                    <div>
+                      <h3 className="font-serif text-xl text-navy">{s.title}</h3>
+                      <p className="mt-1.5 max-w-[26ch] text-sm leading-relaxed text-muted-foreground">
+                        {s.short}
+                      </p>
+                    </div>
+                  </li>
                   {i < steps.length - 1 && (
                     <span
                       aria-hidden="true"
-                      className="absolute top-full left-1/2 h-10 w-px -translate-x-1/2 bg-border sm:top-6 sm:left-auto sm:-right-3 sm:h-px sm:w-6 sm:translate-x-0"
+                      className="mx-auto hidden h-px w-16 border-t border-dashed border-navy/25 sm:block"
                     />
                   )}
-                  <div className="flex items-center gap-3">
-                    <s.icon className="h-5 w-5 text-green" aria-hidden="true" strokeWidth={1.5} />
-                    <span className="eyebrow">Step {i + 1}</span>
-                  </div>
-                  <h3 className="mt-6 font-serif text-2xl text-navy">{s.title}</h3>
-                  <p className="mt-3 max-w-[42ch] text-sm leading-relaxed text-muted-foreground">
-                    {s.body}
-                  </p>
-                </Reveal>
+                </Fragment>
+
               ))}
             </ol>
           </Reveal>
         </section>
+
+        {/* Used by strip */}
+        <section aria-label="Used by" className="border-y border-border bg-secondary/70">
+          <div className="mx-auto flex max-w-[1320px] flex-wrap items-center gap-x-10 gap-y-5 px-5 py-6 sm:px-8">
+            <p className="text-sm font-medium text-navy">Used by</p>
+            {audiences.map((r) => (
+              <div key={r.role} className="flex items-center gap-2.5">
+                <r.icon className="h-5 w-5 text-green" aria-hidden="true" strokeWidth={1.3} />
+                <span className="text-sm text-muted-foreground">{r.plural}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
 
         {/* Who it serves */}
         <section className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 sm:py-28" aria-labelledby="readers-heading">
