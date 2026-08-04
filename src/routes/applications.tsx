@@ -77,8 +77,9 @@ function Timeline({ app }: { app: Application }) {
                   <motion.span
                     className={`absolute inset-y-0 left-0 ${failed ? "bg-destructive/50" : stage.dot}`}
                     initial={{ width: 0 }}
-                    animate={{ width: i < app.stageIndex ? "100%" : 0 }}
-                    transition={{ duration: 0.7, delay: 0.15 * i }}
+                    whileInView={{ width: i < app.stageIndex ? "100%" : 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.7, delay: 0.15 * i, ease: [0.22, 0.61, 0.36, 1] }}
                   />
                 </span>
               )}
@@ -124,12 +125,12 @@ function ApplicationsPage() {
         <ul className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-2">
           {APPLICATIONS.map((app, i) => (
             <Reveal as="li" key={app.id} delay={i * 0.06}>
-              <article className="h-full border border-border bg-card">
+              <article className="card-lift h-full border border-border bg-card">
                 <button
                   type="button"
                   onClick={() => setOpenId(app.id)}
                   aria-haspopup="dialog"
-                  className="w-full p-7 text-left transition-colors hover:bg-secondary/50"
+                  className="group w-full p-7 text-left transition-colors duration-250 hover:bg-secondary/50"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
@@ -173,7 +174,7 @@ function ApplicationsPage() {
 
                   <span className="mt-6 inline-flex items-center gap-2 text-xs text-navy">
                     Open application
-                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    <ArrowRight className="arrow-slide h-3.5 w-3.5" aria-hidden="true" />
                   </span>
                 </button>
               </article>
