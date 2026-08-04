@@ -81,7 +81,48 @@ const audiences = [
 ];
 
 
+const contrasts = [
+  { label: "Certification", body: "confirms a threshold." },
+  { label: "Traceability", body: "records movement." },
+  { label: "Product intelligence", body: "carries what the product is." },
+];
+
+const layers = [
+  { code: "L1", name: "International", body: "Global standards and cross-border requirements." },
+  { code: "L2", name: "National", body: "Country-level regulation and registries." },
+  { code: "L3", name: "Community", body: "Regional and collective records of practice." },
+  {
+    code: "L4",
+    name: "The HEDAMO layer",
+    body: "What no certificate captures — the producer's own intelligence.",
+  },
+];
+
+const evidenceStates = [
+  { state: "Supported", note: "declared and backed by evidence" },
+  { state: "Producer-declared", note: "the producer's own knowledge, in their words" },
+  { state: "Partly supported", note: "some evidence, not yet complete" },
+  { state: "Private by choice", note: "held back by the producer" },
+  { state: "Not declared", note: "shown openly as a gap, never hidden" },
+];
+
+const turmericFields = [
+  { field: "Curcumin, lab-tested", state: "Supported" },
+  { field: "Curing & drying method", state: "Producer-declared" },
+  { field: "GI region reference", state: "Partly supported" },
+  { field: "Exact farm coordinates", state: "Private by choice" },
+  { field: "Third-party social audit", state: "Not declared" },
+];
+
+const boundaries = [
+  "It does not certify, verify, or approve.",
+  "Producers own their declarations.",
+  "Jurisdictions determine admissibility.",
+  "HEDAMO maintains the structure.",
+];
+
 const ease = [0.22, 0.61, 0.36, 1] as const;
+
 
 function Home() {
   return (
