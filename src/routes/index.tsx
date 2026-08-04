@@ -17,6 +17,9 @@ import {
   FileCheck,
   Eye,
   ShieldOff,
+  Users,
+  ListChecks,
+  ScanLine,
 } from "lucide-react";
 import { motion } from "motion/react";
 
