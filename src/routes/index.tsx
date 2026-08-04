@@ -65,10 +65,10 @@ const steps = [
 ];
 
 const profiles = [
-  { name: "Zeitoun Heritage", type: "Olive oil", origin: "Jordan", img: olive },
-  { name: "Yirgacheffe Kochere", type: "Coffee", origin: "Ethiopia", img: coffee },
-  { name: "Sona Masoori Select", type: "Rice", origin: "Andhra Pradesh", img: rice },
-  { name: "Malabar Green", type: "Cardamom", origin: "Kerala", img: cardamom },
+  { name: "Zeitoun Heritage", type: "Olive oil", origin: "Jordan", img: olive, url: "https://www.hedamo.com/disclosures/zeitoun" },
+  { name: "Yirgacheffe Kochere", type: "Coffee", origin: "Ethiopia", img: coffee, url: "https://www.hedamo.com/disclosures/yirgacheffe-kochere" },
+  { name: "Sona Masoori Select", type: "Rice", origin: "Andhra Pradesh", img: rice, url: "https://www.hedamo.com/disclosures/sona-masoori" },
+  { name: "Malabar Green", type: "Cardamom", origin: "Kerala", img: cardamom, url: "https://www.hedamo.com/disclosures/malabar-green" },
 ];
 
 const audiences = [
