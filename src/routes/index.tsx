@@ -281,23 +281,30 @@ function Home() {
             <ul className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
               {profiles.map((p, i) => (
                 <Reveal as="li" key={p.name} delay={i * 0.06}>
-                  <article className="group">
-                    <div className="overflow-hidden rounded-sm bg-secondary">
-                      <img
-                        src={p.img}
-                        alt={`${p.type} from ${p.origin}`}
-                        width={1024}
-                        height={768}
-                        loading="lazy"
-                        decoding="async"
-                        className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
-                    </div>
-                    <h3 className="mt-5 font-serif text-xl text-navy">{p.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {p.type} · {p.origin}
-                    </p>
-                  </article>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <article>
+                      <div className="overflow-hidden rounded-sm bg-secondary">
+                        <img
+                          src={p.img}
+                          alt={`${p.type} from ${p.origin}`}
+                          width={1024}
+                          height={768}
+                          loading="lazy"
+                          decoding="async"
+                          className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        />
+                      </div>
+                      <h3 className="mt-5 font-serif text-xl text-navy">{p.name}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {p.type} · {p.origin}
+                      </p>
+                    </article>
+                  </a>
                 </Reveal>
               ))}
             </ul>
