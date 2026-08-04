@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+
 
 const nav = [
   { to: "/", label: "Overview" },
