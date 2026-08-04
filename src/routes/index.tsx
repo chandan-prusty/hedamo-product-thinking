@@ -315,10 +315,24 @@ function Home() {
             <div className="mt-12 grid gap-8 lg:grid-cols-[38fr_62fr] lg:items-start">
               <Reveal>
                 <p className="eyebrow">The fourth layer</p>
-                <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
-                  International, national and community records each hold part of the story. The
-                  fourth layer is the producer&apos;s own intelligence — how the product was grown,
-                  cured, handled and tested — structured and shown honestly, state by state.
+                <p className="mt-3 max-w-[62ch] text-sm leading-relaxed text-muted-foreground">
+                  Three records hold part of the story. The fourth holds the rest.
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {[
+                    "International records",
+                    "National records",
+                    "Community records",
+                    "Producer intelligence — grown, cured, handled, tested",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-green" aria-hidden="true" strokeWidth={1.8} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 max-w-[62ch] border-l-2 border-green/50 pl-4 text-sm leading-relaxed text-navy">
+                  Structured and shown honestly, state by state.
                 </p>
               </Reveal>
               <ol className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
