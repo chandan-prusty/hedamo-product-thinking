@@ -382,10 +382,18 @@ function Home() {
                 </dl>
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
-                  Missing isn&apos;t withheld, and withheld isn&apos;t undocumented — each is its own
-                  honest state, never a mark against the producer, and never summed into a score.
-                </p>
+                <div className="border-l-2 border-navy/25 pl-4">
+                  <p className="max-w-[62ch] text-sm leading-relaxed text-navy">
+                    Missing isn&apos;t withheld.
+                  </p>
+                  <p className="mt-1 max-w-[62ch] text-sm leading-relaxed text-navy">
+                    Withheld isn&apos;t undocumented.
+                  </p>
+                  <p className="mt-1 max-w-[62ch] text-sm leading-relaxed text-muted-foreground">
+                    Never a mark against the producer. Never summed into a score.
+                  </p>
+                </div>
+
                 <ul className="mt-5 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-1">
                   {evidenceStates.map((e) => (
                     <li key={e.state} className="text-sm leading-relaxed">
