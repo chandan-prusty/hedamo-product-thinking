@@ -152,30 +152,33 @@ function Home() {
           <div className="grid w-full items-center gap-12 lg:grid-cols-[55fr_45fr] lg:gap-14">
             <div>
               <motion.p
-                className="eyebrow"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
+                className="max-w-[65ch] text-[1.0625rem] leading-relaxed text-muted-foreground"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease }}
               >
-                Product intelligence structure
+                HEDAMO helps producers structure product intelligence into transparent, portable
+                product profiles for reviewers, institutions and buyers.
               </motion.p>
               <motion.h1
                 id="hero-heading"
                 className="mt-6 max-w-[14ch] font-serif text-[2.6rem] leading-[1.04] text-navy sm:text-6xl lg:text-[4.5rem]"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75, ease }}
+                transition={{ duration: 0.75, delay: 0.1, ease }}
               >
                 The product moves. The understanding doesn&apos;t.
               </motion.h1>
               <motion.p
-                className="mt-8 max-w-[46ch] text-[1.0625rem] leading-relaxed text-muted-foreground"
+                className="mt-8 max-w-[50ch] text-[1.0625rem] leading-relaxed text-muted-foreground"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.65, delay: 0.2, ease }}
               >
-                HEDAMO structures producer-declared product intelligence into a portable,
-                transparent product profile.
+                HEDAMO is a structured disclosure system for product intelligence. Producers
+                record what they know about their products; reviewers, institutions and buyers can
+                then read that information in a consistent, transparent format. It exists because
+                product claims often travel farther than the understanding behind them.
               </motion.p>
               <motion.div
                 className="mt-8 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center"
@@ -183,6 +186,7 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.34, ease }}
               >
+
                 <a
                   href="#profiles"
                   className="group btn-primary inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-3.5 text-sm text-primary-foreground"
