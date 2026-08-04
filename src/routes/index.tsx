@@ -81,7 +81,48 @@ const audiences = [
 ];
 
 
+const contrasts = [
+  { label: "Certification", body: "confirms a threshold." },
+  { label: "Traceability", body: "records movement." },
+  { label: "Product intelligence", body: "carries what the product is." },
+];
+
+const layers = [
+  { code: "L1", name: "International", body: "Global standards and cross-border requirements." },
+  { code: "L2", name: "National", body: "Country-level regulation and registries." },
+  { code: "L3", name: "Community", body: "Regional and collective records of practice." },
+  {
+    code: "L4",
+    name: "The HEDAMO layer",
+    body: "What no certificate captures — the producer's own intelligence.",
+  },
+];
+
+const evidenceStates = [
+  { state: "Supported", note: "declared and backed by evidence" },
+  { state: "Producer-declared", note: "the producer's own knowledge, in their words" },
+  { state: "Partly supported", note: "some evidence, not yet complete" },
+  { state: "Private by choice", note: "held back by the producer" },
+  { state: "Not declared", note: "shown openly as a gap, never hidden" },
+];
+
+const turmericFields = [
+  { field: "Curcumin, lab-tested", state: "Supported" },
+  { field: "Curing & drying method", state: "Producer-declared" },
+  { field: "GI region reference", state: "Partly supported" },
+  { field: "Exact farm coordinates", state: "Private by choice" },
+  { field: "Third-party social audit", state: "Not declared" },
+];
+
+const boundaries = [
+  "It does not certify, verify, or approve.",
+  "Producers own their declarations.",
+  "Jurisdictions determine admissibility.",
+  "HEDAMO maintains the structure.",
+];
+
 const ease = [0.22, 0.61, 0.36, 1] as const;
+
 
 function Home() {
   return (
@@ -263,6 +304,105 @@ function Home() {
           </div>
         </section>
 
+        {/* Contrast band */}
+        <section className="rule-top bg-secondary/60" aria-label="What each layer does">
+          <div className="mx-auto grid max-w-[1320px] gap-px overflow-hidden px-5 py-16 sm:grid-cols-3 sm:px-8 sm:py-20">
+            {contrasts.map((c, i) => (
+              <Reveal key={c.label} delay={i * 0.06} className="px-1 sm:px-8">
+                <p className="font-serif text-2xl leading-snug text-navy">
+                  {c.label}{" "}
+                  <span className="text-muted-foreground">{c.body}</span>
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* The fourth layer */}
+        <section className="rule-top" aria-labelledby="fourth-layer-heading">
+          <div className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 sm:py-28">
+            <div className="grid gap-14 lg:grid-cols-[45fr_55fr]">
+              <Reveal>
+                <p className="eyebrow">The fourth layer</p>
+                <h2
+                  id="fourth-layer-heading"
+                  className="mt-4 max-w-[20ch] font-serif text-3xl leading-[1.15] text-navy sm:text-[2.5rem]"
+                >
+                  Most of what makes a product distinct lives in a layer no certificate reads.
+                </h2>
+                <p className="mt-6 max-w-[52ch] text-[1.0625rem] leading-relaxed text-muted-foreground">
+                  International, national and community records each hold part of the story. The
+                  fourth layer is the producer&apos;s own intelligence — how the product was grown,
+                  cured, handled and tested — structured and shown honestly, state by state.
+                </p>
+              </Reveal>
+              <ol className="grid gap-px overflow-hidden rounded-lg border border-border bg-border">
+                {layers.map((l, i) => (
+                  <Reveal
+                    as="li"
+                    key={l.code}
+                    delay={i * 0.05}
+                    className={`flex items-baseline gap-6 p-7 ${
+                      l.code === "L4" ? "bg-secondary" : "bg-card"
+                    }`}
+                  >
+                    <span className="font-serif text-sm text-green">{l.code}</span>
+                    <span>
+                      <span className="block font-serif text-lg text-navy">{l.name}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                        {l.body}
+                      </span>
+                    </span>
+                  </Reveal>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        {/* One profile, read honestly */}
+        <section className="rule-top bg-secondary/50" aria-labelledby="honest-heading">
+          <div className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 sm:py-28">
+            <Reveal>
+              <p className="eyebrow">One turmeric profile, read honestly</p>
+              <h2 id="honest-heading" className="mt-4 max-w-2xl text-3xl text-navy sm:text-4xl">
+                Every field carries its own evidence state.
+              </h2>
+            </Reveal>
+            <div className="mt-12 grid gap-10 lg:grid-cols-[55fr_45fr]">
+              <Reveal>
+                <dl className="grid gap-px overflow-hidden rounded-lg border border-border bg-border">
+                  {turmericFields.map((f) => (
+                    <div
+                      key={f.field}
+                      className="flex flex-wrap items-center justify-between gap-3 bg-card px-6 py-5"
+                    >
+                      <dt className="text-sm text-navy">{f.field}</dt>
+                      <dd className="rounded-full border border-navy/15 px-3 py-1 text-xs text-muted-foreground">
+                        {f.state}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </Reveal>
+              <Reveal delay={0.08}>
+                <p className="max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                  Missing isn&apos;t withheld, and withheld isn&apos;t undocumented — each is its own
+                  honest state, never a mark against the producer, and never summed into a score.
+                </p>
+                <ul className="mt-7 space-y-3">
+                  {evidenceStates.map((e) => (
+                    <li key={e.state} className="text-sm leading-relaxed">
+                      <span className="text-navy">{e.state}</span>
+                      <span className="text-muted-foreground"> — {e.note}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
         {/* Philosophy */}
         <section className="rule-top bg-secondary" aria-labelledby="philosophy-heading">
           <div className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 sm:py-28">
@@ -272,12 +412,51 @@ function Home() {
                 id="philosophy-heading"
                 className="mt-6 max-w-3xl font-serif text-3xl leading-[1.25] text-navy sm:text-[2.75rem]"
               >
-                HEDAMO structures what the producer declares. It does not certify, verify, or
-                approve.
+                HEDAMO structures what the producer declares.
               </blockquote>
+            </Reveal>
+            <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {boundaries.map((b, i) => (
+                <Reveal as="li" key={b} delay={i * 0.05} className="border-t border-navy/15 pt-4 text-sm leading-relaxed text-muted-foreground">
+                  {b}
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Methodology & Engage */}
+        <section className="rule-top" aria-label="Methodology and engagement">
+          <div className="mx-auto grid max-w-[1320px] gap-px overflow-hidden px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-16">
+            <Reveal>
+              <h3 className="font-serif text-2xl text-navy">Methodology</h3>
+              <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                How product information becomes structured, portable, and gap-visible.
+              </p>
+              <a
+                href="#how-heading"
+                className="mt-6 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
+              >
+                Read the methodology
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Reveal>
+            <Reveal delay={0.08} className="mt-12 lg:mt-0">
+              <h3 className="font-serif text-2xl text-navy">Engage</h3>
+              <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                For institutional briefings, disclosure readiness, or research correspondence.
+              </p>
+              <Link
+                to="/backlog"
+                className="mt-6 inline-flex items-center gap-2 text-sm text-navy underline-offset-4 hover:underline"
+              >
+                Share your question
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </Reveal>
           </div>
         </section>
+
       </main>
       <SiteFooter />
     </div>
