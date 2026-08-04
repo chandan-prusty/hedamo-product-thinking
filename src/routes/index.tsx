@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   FileText,
@@ -5,11 +6,11 @@ import {
   Share2,
   ArrowRight,
   Sprout,
-  ShoppingBag,
+  UserRound,
   Landmark,
-  Microscope,
-  Building2,
-  Handshake,
+  ShoppingCart,
+  FlaskConical,
+  Globe,
 } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -19,6 +20,8 @@ import olive from "@/assets/olive.jpg";
 import coffee from "@/assets/coffee.jpg";
 import rice from "@/assets/rice.jpg";
 import cardamom from "@/assets/cardamom.jpg";
+import heroComposition from "@/assets/hero-composition.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
