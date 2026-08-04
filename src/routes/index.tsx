@@ -145,7 +145,7 @@ function Home() {
 
             {/* Editorial photo composition */}
             <motion.div
-              className="relative mx-auto w-full max-w-[620px]"
+              className="relative mx-auto w-full max-w-[620px] overflow-visible"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15, ease }}
@@ -156,7 +156,7 @@ function Home() {
                 width={1200}
                 height={1008}
                 decoding="async"
-                className="w-full object-contain drop-shadow-[0_45px_60px_rgba(20,30,55,0.22)]"
+                className="w-full object-contain drop-shadow-[0_3px_6px_rgba(20,30,55,0.10),0_12px_24px_rgba(20,30,55,0.14)] sm:drop-shadow-[0_4px_10px_rgba(20,30,55,0.10),0_20px_38px_rgba(20,30,55,0.16)] lg:drop-shadow-[0_6px_14px_rgba(20,30,55,0.10),0_30px_55px_rgba(20,30,55,0.18)] xl:drop-shadow-[0_8px_18px_rgba(20,30,55,0.10),0_42px_72px_rgba(20,30,55,0.20)]"
               />
             </motion.div>
           </div>
