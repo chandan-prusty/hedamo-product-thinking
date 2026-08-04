@@ -20,7 +20,7 @@ import olive from "@/assets/olive.jpg";
 import coffee from "@/assets/coffee.jpg";
 import rice from "@/assets/rice.jpg";
 import cardamom from "@/assets/cardamom.jpg";
-import heroComposition from "@/assets/hero-composition.png";
+import heroComposition from "@/assets/hero-composition.webp";
 
 
 export const Route = createFileRoute("/")({
