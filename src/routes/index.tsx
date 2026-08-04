@@ -44,16 +44,19 @@ const steps = [
   {
     icon: FileText,
     title: "Declare",
+    short: "Producers declare what they know about their product.",
     body: "The producer records what they know — practices, testing, origin — in their own words.",
   },
   {
     icon: Layers,
     title: "Structure",
+    short: "HEDAMO structures the information into a standard product profile.",
     body: "Each statement is placed in a fixed structure, with its evidence state shown honestly.",
   },
   {
     icon: Share2,
     title: "Share",
+    short: "The profile is portable, transparent, and ready to be shared.",
     body: "The profile travels with the product, readable by anyone who needs to understand it.",
   },
 ];
@@ -66,13 +69,14 @@ const profiles = [
 ];
 
 const audiences = [
-  { icon: Sprout, role: "Producer", question: "Does my distinction travel?" },
-  { icon: ShoppingBag, role: "Buyer", question: "What am I actually sourcing?" },
-  { icon: Landmark, role: "Institution", question: "What is declared and what is not?" },
-  { icon: Microscope, role: "Researcher", question: "Can this be compared across regions?" },
-  { icon: Building2, role: "Government", question: "Is the record legible at scale?" },
-  { icon: Handshake, role: "Trade body", question: "Can producers be seen beyond codes?" },
+  { icon: Sprout, role: "Producer", plural: "Producers", question: "Does my distinction travel?" },
+  { icon: UserRound, role: "Reviewer", plural: "Reviewers", question: "What is declared and what is not?" },
+  { icon: Landmark, role: "Institution", plural: "Institutions", question: "Is the record legible at scale?" },
+  { icon: ShoppingCart, role: "Buyer", plural: "Buyers", question: "What am I actually sourcing?" },
+  { icon: FlaskConical, role: "Researcher", plural: "Researchers", question: "Can this be compared across regions?" },
+  { icon: Globe, role: "Trade body", plural: "Trade Bodies", question: "Can producers be seen beyond codes?" },
 ];
+
 
 const ease = [0.22, 0.61, 0.36, 1] as const;
 
